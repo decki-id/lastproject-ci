@@ -196,16 +196,15 @@
 
         private function sendEmailForgotPassword($token) {
             $config = [
-                'protocol' => 'smtp',
-                'smtp_host' => 'smtp.gmail.com',
-                'smtp_user' => '',
-                'smtp_pass' => '',
-                'smtp_port' => 587,
-                'smtp_crypto' => 'tls',
-                'mailtype' => 'html',
-                'charset' => 'utf-8',
-                'newline' => '\r\n',
-                'crlf' => '\r\n'
+                "protocol" => "smtp",
+                "smtp_host" => "smtp.gmail.com",
+                "smtp_user" => "",
+                "smtp_pass" => "",
+                "smtp_port" => 587,
+                "smtp_crypto" => "tls",
+                "mailtype" => "html",
+                "newline" => "\r\n",
+                "crlf" => "\r\n"
             ];
 
             $this->email->initialize($config);
