@@ -2054,6 +2054,7 @@ input[type=radio] {
 
 .product-qty input[type=number] {
 	-moz-appearance: textfield;
+	appearance: textfield;
 }
 
 .quantity input {
@@ -5320,6 +5321,7 @@ Custom Style by Decki
 #navbar-brand {
 	height: 79px;
 	width: 145px;
+	padding: 4px 42.5px 4px 42.5px;
 }
 
 .ticket-box {
