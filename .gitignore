@@ -1,6 +1,7 @@
 .DS_Store
 composer.lock
 database.php
+Auth.php
 
 application/cache/*
 application/logs/*
