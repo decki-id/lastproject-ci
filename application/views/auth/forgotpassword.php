@@ -6,22 +6,18 @@
 
 <div id="panel">
 	<div class="text-center" id="login-panel">
-		<img src="<?= base_url('images/'); ?>logorevota.jpg" />
+		<img src="<?= base_url('images/'); ?>logo-ci.png" width="100" />
 		<h2>Forgot Password</h2>
 		<form method="post" action="<?= base_url('auth/forgotpassword/'); ?>">
 			<div class="form-group">
-			    <label for="email"><small>
-			    	Enter your email address below and we will send you a link to reset your password.
-			    </small></label>
-			    <input type="email" class="form-control" id="email" name="email" placeholder="Email address" required autofocus />
+				<label for="email">
+					<small>Enter your email address below and we will send you a link to reset your password.</small>
+				</label>
+				<input type="email" class="form-control" id="email" name="email" placeholder="Email address" required autofocus />
 			</div>
 			<div class="row">
-				<div class="col">
-					<button type="submit" class="btn btn-primary">Reset My Password</button>
-				</div>
-				<div class="col">
-					<a href="<?= base_url(); ?>" class="col btn btn-secondary">Cancel</a>
-				</div>
+				<div class="col"><button type="submit" class="btn btn-primary">Reset My Password</button></div>
+				<div class="col"><a href="<?= base_url(); ?>" class="col btn btn-secondary">Cancel</a></div>
 			</div>
 		</form>
 	</div>
