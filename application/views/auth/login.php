@@ -9,7 +9,7 @@
 <div id="panel">
 	<div id="login-panel">
 		<div class="text-center">
-			<img src="<?= base_url('images/'); ?>logo-ci.png" width="100">
+			<img src="<?= base_url('images/'); ?>logo-ci.png" width="100" />
 			<h2>Ticketing<br>Support System</h2>
 		</div>
 		<form method="post" action="<?= base_url('auth/'); ?>">
