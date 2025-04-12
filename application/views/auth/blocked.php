@@ -4,8 +4,8 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link rel="icon" type="image/png" href="<?= base_url('images/'); ?>iconrevota.jpg">
-        <title>Revota Support System</title>
+        <link rel="icon" type="image/png" href="<?= base_url('images/'); ?>favicon.ico">
+        <title>Ticketing Support System</title>
         <link rel="stylesheet" href="<?= base_url('assets/'); ?>vendor/fonts/fontawesome/css/fontawesome-all.css">
         <link rel="stylesheet" href="<?= base_url('assets/'); ?>libs/css/sb-admin-2.min.css" >
     </head>

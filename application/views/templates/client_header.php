@@ -5,8 +5,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <!-- Bootstrap CSS -->
-        <link rel="icon" type="image/png" href="<?= base_url('images/'); ?>iconrevota.jpg" />
-        <title>Revota Support System</title>
+        <link rel="icon" type="image/png" href="<?= base_url('images/'); ?>favicon.ico" />
+        <title>Ticketing Support System</title>
         <link rel="stylesheet" href="<?= base_url('assets/'); ?>bootstrap-441/css/bootstrap.css">
         <link rel="stylesheet" href="<?= base_url('assets/'); ?>libs/css/style-client.css">
         <link rel="stylesheet" href="<?= base_url('assets/'); ?>vendor/fonts/fontawesome/css/fontawesome-all.css">
@@ -16,7 +16,7 @@
             <div class="navbar navbar-expand-lg navbar-expand-md navbar-expand-sm bg-white fixed-top" id="navbar-custom">
                 <div class="container">
                     <a href="<?= base_url('client/'); ?>"><img src="<?= base_url('images/'); ?>logorevota.jpg" id="navbar-brand"></a>
-                    <a href="<?= base_url('client/'); ?>" class="navbar-brand" id="text-brand">Revota Support System</a>
+                    <a href="<?= base_url('client/'); ?>" class="navbar-brand" id="text-brand">Ticketing Support System</a>
                     <div class="navbar-nav ml-auto navbar-right-top">
                         <?php $url = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH); ?>
                         <?php if ($url === '/lastproject-ci/client/') : ?>
