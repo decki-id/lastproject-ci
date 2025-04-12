@@ -15,7 +15,7 @@
         <div class="dashboard-main-wrapper">
             <div class="navbar navbar-expand-lg navbar-expand-md navbar-expand-sm bg-white fixed-top" id="navbar-custom">
                 <div class="container">
-                    <a href="<?= base_url('client/'); ?>"><img src="<?= base_url('images/'); ?>logorevota.jpg" id="navbar-brand"></a>
+                    <a href="<?= base_url('client/'); ?>"><img src="<?= base_url('images/'); ?>logo-ci.png" id="navbar-brand"></a>
                     <a href="<?= base_url('client/'); ?>" class="navbar-brand" id="text-brand">Ticketing Support System</a>
                     <div class="navbar-nav ml-auto navbar-right-top">
                         <?php $url = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH); ?>
