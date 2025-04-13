@@ -26,15 +26,12 @@
                 $this->load->view('templates/auth_header');
                 $this->load->view('auth/login');
                 $this->load->view('templates/auth_footer');
-            } else {
-                $this->login();
-            }
+            } else { $this->login(); }
         }
 
         public function login() {
             $username = $this->input->post('username');
             $password = $this->input->post('password');
-
             $agent = $this->Agent_model->getAgentByUsername($username);
 
             if ($agent) {
@@ -104,7 +101,6 @@
         public function verify() {
             $username = $this->input->get('username');
             $token = $this->input->get('token');
-
             $agent = $this->Agent_model->getAgentByUsername($username);
 
             if ($agent) {
@@ -160,10 +156,7 @@
 
             if ($agent) {
                 $token = base64_encode(openssl_random_pseudo_bytes(32));
-                $user_token = [
-                    'email' => $email,
-                    'token' => $token
-                ];
+                $user_token = ['email' => $email, 'token' => $token];
                 $this->db->insert('user_token', $user_token);
                 $this->sendEmailForgotPassword($token);
                 $this->session->set_flashdata('flash-success', 'Please check your email to reset your password.');
@@ -176,10 +169,7 @@
 
                 if ($contact) {
                     $token = base64_encode(openssl_random_pseudo_bytes(32));
-                    $user_token = [
-                        'email' => $email,
-                        'token' => $token
-                    ];
+                    $user_token = ['email' => $email, 'token' => $token];
                     $this->db->insert('user_token', $user_token);
                     $this->sendEmailForgotPassword($token);
                     $this->session->set_flashdata('flash-success', 'Please check your email to reset your password.');
@@ -210,11 +200,11 @@
             $this->email->initialize($config);
             $this->email->from('d.herdiawan.s@gmail.com', 'Decki ID');
             $this->email->to($this->input->post('email'));
-            $this->email->subject('Ganti Password');
+            $this->email->subject('Decki ID Change Password');
             $this->email->message('
-                Silakan klik tautan di bawah ini untuk mengganti password anda.<br>
+                Please click the link below to change your password.<br>
                 <a href="'. base_url() . 'auth/resetpassword?email=' . $this->input->post('email') . '&token=' . urlencode($token) .'">
-                Ganti password
+                Change Password
                 </a>
             ');
 
@@ -229,7 +219,6 @@
         public function resetpassword() {
             $email = $this->input->get('email');
             $token = $this->input->get('token');
-
             $agent = $this->Agent_model->getAgentByEmail($email);
 
             if ($agent) {
@@ -287,7 +276,6 @@
         public function _changePassword() {
             $password = password_hash($this->input->post('password1'), PASSWORD_DEFAULT);
             $email = $this->session->userdata('reset_email');
-
             $agent = $this->Agent_model->getAgentByEmail($email);
 
             if ($agent) {
