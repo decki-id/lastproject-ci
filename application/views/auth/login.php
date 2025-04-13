@@ -1,16 +1,19 @@
 <?php if ($this->session->flashdata('flash-error')) : ?>
 	<div class="flash-data-error" data-flashdata="<?= $this->session->flashdata('flash-error'); ?>"></div>
+	<?php $this->session->unset_userdata('flash-error') ?>
 <?php elseif ($this->session->flashdata('flash-success')) : ?>
 	<div class="flash-data-success" data-flashdata="<?= $this->session->flashdata('flash-success'); ?>"></div>
-<?php else : ?>
+	<?php $this->session->unset_userdata('flash-success') ?>
+<?php elseif ($this->session->flashdata('flash')) : ?>
 	<div class="flash-data-error" data-flashdata="<?= $this->session->flashdata('flash'); ?>"></div>
+	<?php $this->session->unset_userdata('flash') ?>
 <?php endif; ?>
 
 <div id="panel">
 	<div id="login-panel">
 		<div class="text-center">
 			<img src="<?= base_url('images/'); ?>logo-ci.png" width="100" />
-			<h2>Ticketing<br>Support System</h2>
+			<h4>Ticketing Support System</h4>
 		</div>
 		<form method="post" action="<?= base_url('auth/'); ?>">
 			<div class="form-group row">

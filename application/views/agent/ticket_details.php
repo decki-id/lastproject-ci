@@ -7,7 +7,10 @@
     }
 ?>
 
-<div class="flash-data-success" data-flashdata="<?= $this->session->flashdata('flash'); ?>"></div>
+<?php if ($this->session->flashdata('flash')) : ?>
+    <div class="flash-data-success" data-flashdata="<?= $this->session->flashdata('flash'); ?>"></div>
+	<?php $this->session->unset_userdata('flash') ?>
+<?php endif; ?>
 
 <div class="dashboard-wrapper">
     <div class="card">

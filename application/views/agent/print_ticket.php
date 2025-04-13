@@ -24,7 +24,7 @@
 
         <h5>
             <table class="table">
-                <th class="pt-4">PT. Ava Revota</th>
+                <th class="pt-4">Decki ID</th>
                 <td class="text-right pt-4"><b>#<?= $ticket['id']; ?></b></td>
             </table>
         </h5>

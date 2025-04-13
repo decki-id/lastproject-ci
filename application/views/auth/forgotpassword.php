@@ -1,7 +1,9 @@
 <?php if ($this->session->flashdata('flash-error')) : ?>
 	<div class="flash-data-error" data-flashdata="<?= $this->session->flashdata('flash-error'); ?>"></div>
+	<?php $this->session->unset_userdata('flash-error') ?>
 <?php elseif ($this->session->flashdata('flash-success')) : ?>
 	<div class="flash-data-success" data-flashdata="<?= $this->session->flashdata('flash-success'); ?>"></div>
+	<?php $this->session->unset_userdata('flash-success') ?>
 <?php endif; ?>
 
 <div id="panel">

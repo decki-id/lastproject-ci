@@ -16,7 +16,7 @@
         <table class="table">
             <tbody>
                 <tr>
-                    <th class="text-center pt-4"><h5>PT. Ava Revota</h5></th>
+                    <th class="text-center pt-4"><h5>Decki ID</h5></th>
                 </tr>
                 <tr>
                     <td class="text-center" id="no-border"><h5>Agent List</h5></td>

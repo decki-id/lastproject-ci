@@ -14,7 +14,7 @@
     
     <body class="bg-white">
         <table class="table">
-            <th class="text-center pt-4"><h5>PT. Ava Revota</h5></th>
+            <th class="text-center pt-4"><h5>Decki ID</h5></th>
         </table>
         <table class="table">
             <tbody>
