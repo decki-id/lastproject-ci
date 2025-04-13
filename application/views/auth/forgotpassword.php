@@ -19,7 +19,7 @@
 			</div>
 			<div class="row">
 				<div class="col"><button type="submit" class="btn btn-primary">Reset My Password</button></div>
-				<div class="col"><a href="<?= base_url(); ?>" class="col btn btn-secondary">Cancel</a></div>
+				<div class="col"><a href="<?= base_url(); ?>" class="col btn btn-secondary">Back to Login Page</a></div>
 			</div>
 		</form>
 	</div>
