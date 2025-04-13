@@ -334,25 +334,24 @@
 
         private function sendEmailNotificationAgent() {
             $config = [
-                'protocol' =>'smtp',
-                'smtp_host' => 'ssl://smtp.googlemail.com',
-                'smtp_user' => 'd.herdiawan.s@gmail.com',
-                'smtp_pass' => 'h3r@w4t!',
-                'smtp_port' => 465,
-                'mailtype' => 'html',
-                'charset' => 'utf-8',
-                'newline' => "\r\n"
+                "protocol" =>"smtp",
+                "smtp_host" => "smtp.gmail.com",
+                "smtp_user" => "",
+                "smtp_pass" => "",
+                "smtp_port" => 587,
+                "smtp_crypto" => "tls",
+                "mailtype" => "html",
+                "newline" => "\r\n",
+                "crlf" => "\r\n"
             ];
-            
+
             $this->email->initialize($config);
-            $this->email->from('d.herdiawan.s@gmail.com', 'PT. Ava Revota');
+            $this->email->from('d.herdiawan.s@gmail.com', 'Decki ID');
             $this->email->to('herdiawand@yahoo.co.id');
-            $this->email->subject('Notifikasi Permintaan Bantuan');
+            $this->email->subject('Decki ID Support Notification');
             $this->email->message('
                 Ada seorang pelanggan telah membuat permintaan bantuan baru! Ayo dicek!<br>
-                <a href="'. base_url() .'">
-                Buka portal
-                </a>
+                <a href="'. base_url() .'">Buka portal</a>
             ');
             
             if ($this->email->send()) {
@@ -365,27 +364,26 @@
 
         private function sendEmailNotificationAgent1() {
             $config = [
-                'protocol' =>'smtp',
-                'smtp_host' => 'ssl://smtp.googlemail.com',
-                'smtp_user' => 'd.herdiawan.s@gmail.com',
-                'smtp_pass' => 'h3r@w4t!',
-                'smtp_port' => 465,
-                'mailtype' => 'html',
-                'charset' => 'utf-8',
-                'newline' => "\r\n"
+                "protocol" =>"smtp",
+                "smtp_host" => "smtp.gmail.com",
+                "smtp_user" => "",
+                "smtp_pass" => "",
+                "smtp_port" => 587,
+                "smtp_crypto" => "tls",
+                "mailtype" => "html",
+                "newline" => "\r\n",
+                "crlf" => "\r\n"
             ];
-            
+
             $this->email->initialize($config);
-            $this->email->from('d.herdiawan.s@gmail.com', 'PT. Ava Revota');
+            $this->email->from('d.herdiawan.s@gmail.com', 'Decki ID');
             $this->email->to('eduramdhanaputra@yahoo.com');
-            $this->email->subject('Notifikasi Permintaan Bantuan');
+            $this->email->subject('Decki ID Support Notification');
             $this->email->message('
                 Ada seorang pelanggan telah membuat permintaan bantuan baru! Ayo dicek!<br>
-                <a href="'. base_url() .'">
-                Buka portal
-                </a>
+                <a href="'. base_url() .'">Buka portal</a>
             ');
-            
+
             if ($this->email->send()) {
                 return true;
             } else {
@@ -396,27 +394,26 @@
 
         private function sendEmailNotificationAgent2() {
             $config = [
-                'protocol' =>'smtp',
-                'smtp_host' => 'ssl://smtp.googlemail.com',
-                'smtp_user' => 'd.herdiawan.s@gmail.com',
-                'smtp_pass' => 'h3r@w4t!',
-                'smtp_port' => 465,
-                'mailtype' => 'html',
-                'charset' => 'utf-8',
-                'newline' => "\r\n"
+                "protocol" =>"smtp",
+                "smtp_host" => "smtp.gmail.com",
+                "smtp_user" => "",
+                "smtp_pass" => "",
+                "smtp_port" => 587,
+                "smtp_crypto" => "tls",
+                "mailtype" => "html",
+                "newline" => "\r\n",
+                "crlf" => "\r\n"
             ];
-            
+
             $this->email->initialize($config);
-            $this->email->from('d.herdiawan.s@gmail.com', 'PT. Ava Revota');
+            $this->email->from('d.herdiawan.s@gmail.com', 'Decki ID');
             $this->email->to('triuntungsutriyanto@yahoo.com');
-            $this->email->subject('Notifikasi Permintaan Bantuan');
+            $this->email->subject('Decki ID Support Notification');
             $this->email->message('
                 Ada seorang pelanggan telah membuat permintaan bantuan baru! Ayo dicek!<br>
-                <a href="'. base_url() .'">
-                Buka portal
-                </a>
+                <a href="'. base_url() .'">Buka portal</a>
             ');
-            
+
             if ($this->email->send()) {
                 return true;
             } else {
@@ -427,26 +424,25 @@
 
         private function sendEmailNotificationClient() {
             $config = [
-                'protocol' =>'smtp',
-                'smtp_host' => 'ssl://smtp.googlemail.com',
-                'smtp_user' => 'd.herdiawan.s@gmail.com',
-                'smtp_pass' => 'h3r@w4t!',
-                'smtp_port' => 465,
-                'mailtype' => 'html',
-                'charset' => 'utf-8',
-                'newline' => "\r\n"
+                "protocol" =>"smtp",
+                "smtp_host" => "smtp.gmail.com",
+                "smtp_user" => "",
+                "smtp_pass" => "",
+                "smtp_port" => 587,
+                "smtp_crypto" => "tls",
+                "mailtype" => "html",
+                "newline" => "\r\n",
+                "crlf" => "\r\n"
             ];
-            
+
             $this->email->initialize($config);
-            $this->email->from('d.herdiawan.s@gmail.com', 'PT. Ava Revota');
+            $this->email->from('d.herdiawan.s@gmail.com', 'Decki ID');
             $this->email->to($this->input->post('contact_email'));
-            $this->email->subject('Notifikasi Permintaan Bantuan');
+            $this->email->subject('Decki ID Support Notification');
             $this->email->message('
                 Permintaan bantuan anda sudah selesai dikerjakan, silakan periksa kembali.<br>
                 Terima kasih telah menggunakan Revota.<br>
-                <a href="'. base_url() .'">
-                Buka portal
-                </a>
+                <a href="'. base_url() .'">Buka portal</a>
             ');
             
             if ($this->email->send()) {
@@ -456,7 +452,7 @@
                 die;
             }
         }
-        
+
         public function searchContact() {
             $searchcontact = $this->input->post('searchcontact');
             $this->db->like('name', $searchcontact);
@@ -482,7 +478,7 @@
             $this->db->where('company_brand', $company_brand);
             return $this->db->get('contacts')->result_array();
         }
-        
+
         public function getAllContacts() {
             $this->db->order_by('name', 'ASC');
             return $this->db->get('contacts')->result_array();
@@ -498,11 +494,11 @@
             $this->db->where('company_brand', str_replace('%20', ' ', $company_brand));
             return $this->db->get('contacts')->result_array();
         }
-        
+
         public function getContactById($id) {
             return $this->db->get_where('contacts', ['id' => $id])->row_array();
         }
-        
+
         public function getContactByEmail($email) {
             return $this->db->get_where('contacts', ['email' => $email])->row_array();
         }
@@ -510,7 +506,7 @@
         public function getContactByUsername($username) {
             return $this->db->get_where('contacts', ['username' => $username])->row_array();
         }
-        
+
         public function addNewContact() {
             $email = $this->input->post('email', true);
             $username = $this->input->post('username', true);
@@ -536,29 +532,30 @@
                 'username' => $username,
                 'token' => $token
             ];  
-            
+
             $this->db->insert('contacts', $data);
             $this->db->insert('user_token', $user_token);
-            
+
             $this->sendEmailVerifyContact($token);
         }
-        
+
         private function sendEmailVerifyContact($token) {
             $config = [
-                'protocol' =>'smtp',
-                'smtp_host' => 'ssl://smtp.googlemail.com',
-                'smtp_user' => 'd.herdiawan.s@gmail.com',
-                'smtp_pass' => 'h3r@w4t!',
-                'smtp_port' => 465,
-                'mailtype' => 'html',
-                'charset' => 'utf-8',
-                'newline' => "\r\n"
+                "protocol" =>"smtp",
+                "smtp_host" => "smtp.gmail.com",
+                "smtp_user" => "",
+                "smtp_pass" => "",
+                "smtp_port" => 587,
+                "smtp_crypto" => "tls",
+                "mailtype" => "html",
+                "newline" => "\r\n",
+                "crlf" => "\r\n"
             ];
-            
+
             $this->email->initialize($config);
-            $this->email->from('d.herdiawan.s@gmail.com', 'PT. Ava Revota');
+            $this->email->from('d.herdiawan.s@gmail.com', 'Decki ID');
             $this->email->to($this->input->post('email'));
-            $this->email->subject('Verifikasi Akun');
+            $this->email->subject('Decki ID Account Verification');
             $this->email->message('
                 Terima kasih telah menggunakan Revota.<br>
                 Silakan klik tautan di bawah ini untuk mengaktifkan akun bantuan pelanggan anda dengan username dan password berikut.<br>
@@ -569,7 +566,7 @@
                 Aktifkan akun
                 </a>
             ');
-            
+
             if ($this->email->send()) {
                 return true;
             } else {
@@ -577,7 +574,7 @@
                 die;
             }
         }
-        
+
         public function updateContact() {
             $this->db->set('name', $this->input->post('name', true));
             $this->db->set('branch_address', $this->input->post('branch_address', true));
@@ -609,7 +606,7 @@
             $this->db->where('id', $this->input->post('id'));
             $this->db->update('contacts');
         }
-        
+
         public function updateContactProfile() {
             $this->db->set('name', $this->input->post('name', true));
             $this->db->set('branch_address', $this->input->post('branch_address', true));
@@ -645,7 +642,7 @@
             $this->db->where('id', $id);
             $this->db->update('contacts');
         }
-        
+
         public function changeContactPasswordByEmail($password, $email) {
             $this->db->set('password', $password);
             $this->db->where('email', $email);
@@ -660,11 +657,11 @@
             $this->db->where('username', $username);
             $this->db->update('contacts');
         }
-        
+
         public function deleteContact($id) {
             $this->db->delete('contacts', ['id' => $id]);
         }
-        
+
         public function searchCompany() {
             $searchcompany = $this->input->post('searchcompany');
             $this->db->like('brand', $searchcompany);
@@ -672,12 +669,12 @@
             $this->db->or_like('headquarter_city', $searchcompany);
             return $this->db->get('companies')->result_array();
         }
-        
+
         public function getAllCompanies() {
             $this->db->order_by('brand', 'ASC');
             return $this->db->get('companies')->result_array();
         }
-        
+
         public function getCompanyById($id) {
             return $this->db->get_where('companies', ['id' => $id])->row_array();
         }
@@ -686,7 +683,7 @@
             $this->db->where('brand', str_replace('%20', ' ', $company_brand));
             return $this->db->get('companies')->row_array();
         }
-        
+
         public function addNewCompany() {
             $data = [
                 'brand' => $this->input->post('brand', true),
@@ -696,7 +693,7 @@
             ];
             $this->db->insert('companies', $data);
         }
-        
+
         public function updateCompany() {
             $this->db->set('brand', $this->input->post('brand', true));
             $this->db->set('headquarter_address', $this->input->post('headquarter_address', true));
@@ -726,7 +723,7 @@
             $this->db->where('company_id', $this->input->post('id'));
             $this->db->update('contacts');
         }
-        
+
         public function deleteCompany($id) {
             $this->db->delete('companies', ['id' => $id]);
             $this->db->delete('contacts', ['company_id' => $id]);
@@ -738,7 +735,7 @@
             $this->db->update('agents');
             $this->db->delete('user_token', ['username' => $username]);
         }
-        
+
         public function searchAgent() {
             $searchagent = $this->input->post('searchagent');
             $this->db->like('name', $searchagent);
@@ -748,16 +745,16 @@
             $this->db->or_like('username', $searchagent);
             return $this->db->get('agents')->result_array();
         }
-        
+
         public function getAllAgents() {
             $this->db->order_by('role_id', 'ASC');
             return $this->db->get('agents')->result_array();
         }
-        
+
         public function getAgentById($id) {
             return $this->db->get_where('agents', ['id' => $id])->row_array();
         }
-        
+
         public function getAgentByEmail($email) {
             return $this->db->get_where('agents', ['email' => $email])->row_array();
         }
@@ -797,20 +794,21 @@
         
         private function sendEmailVerifyAgent($token) {
             $config = [
-                'protocol' =>'smtp',
-                'smtp_host' => 'ssl://smtp.googlemail.com',
-                'smtp_user' => 'd.herdiawan.s@gmail.com',
-                'smtp_pass' => 'h3r@w4t!',
-                'smtp_port' => 465,
-                'mailtype' => 'html',
-                'charset' => 'utf-8',
-                'newline' => "\r\n"
+                "protocol" =>"smtp",
+                "smtp_host" => "smtp.gmail.com",
+                "smtp_user" => "",
+                "smtp_pass" => "",
+                "smtp_port" => 587,
+                "smtp_crypto" => "tls",
+                "mailtype" => "html",
+                "newline" => "\r\n",
+                "crlf" => "\r\n"
             ];
             
             $this->email->initialize($config);
-            $this->email->from('d.herdiawan.s@gmail.com', 'PT. Ava Revota');
+            $this->email->from('d.herdiawan.s@gmail.com', 'Decki ID');
             $this->email->to($this->input->post('email'));
-            $this->email->subject('Verifikasi Akun');
+            $this->email->subject('Decki ID Account Verification');
             $this->email->message('
                 Selamat datang di Revota.<br>
                 Silakan klik tautan di bawah ini untuk mengaktifkan akun anda dengan username dan password berikut dan mulai bekerja.<br>
@@ -829,7 +827,7 @@
                 die;
             }
         }
-        
+
         public function updateAgent() {
             $this->db->set('name', $this->input->post('name', true));
             $this->db->set('address', $this->input->post('address', true));
@@ -861,7 +859,7 @@
             $this->db->where('id', $this->input->post('id'));
             $this->db->update('agents');
         }
-        
+
         public function updateAgentProfile() {
             $this->db->set('name', $this->input->post('name', true));
             $this->db->set('address', $this->input->post('address', true));
@@ -896,14 +894,14 @@
             $this->db->where('id', $id);
             $this->db->update('agents');
         }
-        
+
         public function changeAgentPasswordByEmail($password, $email) {
             $this->db->set('password', $password);
             $this->db->where('email', $email);
             $this->db->update('agents');
             $this->db->delete('user_token', ['email' => $email]);
         }
-        
+
         public function changeAgentProfilePassword() {
             $password = password_hash($this->input->post('password1'), PASSWORD_DEFAULT);
             $username = $this->input->post('username');
@@ -931,7 +929,7 @@
                              ORDER BY amount DESC";
             return $this->db->query($querySubject)->result_array();
         }
-        
+
         public function mostCasesByPeriod() {
             $from = $this->input->post('from');
             $until = $this->input->post('until');
@@ -1002,4 +1000,4 @@
             return $this->db->query($queryAgent)->result_array();
         }
     }
-    ?>
+?>

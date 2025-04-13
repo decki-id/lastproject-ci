@@ -3,6 +3,7 @@ composer.lock
 config.php
 database.php
 Auth.php
+Agent_model.php
 
 application/cache/*
 application/logs/*
