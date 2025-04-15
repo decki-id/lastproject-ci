@@ -8,5 +8,5 @@
     <link rel="stylesheet" href="<?= base_url('assets/'); ?>vendor/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?= base_url('assets/'); ?>libs/css/style-auth.css">
     <link rel="icon" type="image/png" href="<?= base_url('images/'); ?>favicon.ico" >
-    <title>Ticketing Support System</title>
+    <title>Helpdesk Ticketing System</title>
   </head>

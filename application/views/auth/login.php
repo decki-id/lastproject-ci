@@ -13,7 +13,7 @@
 	<div id="login-panel">
 		<div class="text-center">
 			<img src="<?= base_url('images/'); ?>logo-ci.png" width="100" />
-			<h4>Ticketing Support System</h4>
+			<h4>Helpdesk Ticketing System</h4>
 		</div>
 		<form method="post" action="<?= base_url('auth/'); ?>">
 			<div class="form-group row">
