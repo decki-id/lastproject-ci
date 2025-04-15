@@ -5350,12 +5350,30 @@ Custom Style by Decki
 	background-color: #f5f7f9;
 	border-left: 1px solid #cfd7df;
 	border-right: 1px solid #cfd7df;
-	padding: 15px;
+	padding: 0;
 	width: 310px;
-	height: 100%;
+	height: calc(100% - 80px);
 	top: 80px;
 	right: 0;
 	z-index: 1;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+}
+
+.ticket-filter-inner {
+	padding: 15px;
+	overflow-y: auto;
+	height: 100%;
+}
+
+.period {
+	width: 63px;
+	justify-content: center;
+}
+
+.period-x {
+	width: 42px;
 }
 
 .detail-box {

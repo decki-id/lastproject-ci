@@ -23,7 +23,14 @@
                                         <img src="<?= base_url('images/'); ?><?= $t['contact_image']; ?>" class="user-avatar-md mr-3">
                                     </a>
                                 </th>
-                                <td><b><a href="<?= base_url('agent/ticket_details/'); ?><?= $t['id']; ?>/" class="text-decor"><?= $t['subject']; ?></a></b> #<?= $t['id']; ?></td>
+                                <td>
+                                    <b>
+                                        <a href="<?= base_url('agent/ticket_details/'); ?><?= $t['id']; ?>/" class="text-decor">
+                                            <?= $t['subject']; ?>
+                                        </a>
+                                    </b>
+                                    #<?= $t['id']; ?>
+                                </td>
                             <tr>
                                 <td><b><?= $t['contact_name']; ?> (<?= $t['company_brand']; ?>)</b></td>
                             </tr>
@@ -54,90 +61,95 @@
 </div>
 
 <div class="ticket-filter">
-    <div class="text-center mb-3"><b>FILTERS</b></div>
-    <form method="post" action="">
-        <div class="form-group input-group">
-            <input type="text" class="form-control" id="searchticket" name="searchticket" placeholder="Search...">
-            <div class="input-group-append">
-                <button type="submit" class="btn btn-grey"><i class="fas fa-search"></i></button>
-            </div>
-        </div>
-    </form>
-    <form method="post" action="">
-        <label><b>By Period</b></label>
-        <div class="form-group">
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="from">From</span>
-                </div>
-                <input type="date" class="form-control" id="from" name="from">
-            </div>
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="until">Until</span>
-                </div>
-                <input type="date" class="form-control" id="until" name="until">
+    <div class="ticket-filter-inner">
+        <div class="text-center mb-3"><b>FILTERS</b></div>
+        <form method="post" action="">
+            <div class="form-group input-group">
+                <input type="text" class="form-control" id="searchticket" name="searchticket" placeholder="Search...">
                 <div class="input-group-append">
                     <button type="submit" class="btn btn-grey"><i class="fas fa-search"></i></button>
                 </div>
             </div>
-        </div>
-    </form>
-    <form method="post" action="">
-        <label for="company_brand"><b>Company</b></label>
-        <div class="form-group input-group">
-            <select class="form-control" id="company_brand" name="company_brand">
-                <option>---</option>
-                <?php foreach ($company as $com) : ?>
-                    <option><?= $com['brand']; ?></option>
-                <?php endforeach; ?>
-            </select>
-            <div class="input-group-append">
-                <button type="submit" class="btn btn-grey"><i class="fas fa-search"></i></button>
+        </form>
+        <form method="post" action="">
+            <label><b>By Period</b></label>
+            <div class="form-group">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text period" id="from">From</span>
+                    </div>
+                    <input type="date" class="form-control" id="from" name="from">
+                    <div class="input-group-append">
+                        <span class="input-group-text period-x">&#65279;</span>
+                    </div>
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text period" id="until">Until</span>
+                    </div>
+                    <input type="date" class="form-control" id="until" name="until">
+                    <div class="input-group-append">
+                        <button type="submit" class="btn btn-grey"><i class="fas fa-search"></i></button>
+                    </div>
+                </div>
             </div>
-        </div>
-    </form>
-    <form method="post" action="">
-        <label for="type"><b>Type</b></label>
-        <div class="form-group input-group">
-            <select class="form-control" id="type" name="type">
-                <option>---</option>
-                <option>On The Spot</option>
-                <option>Remote</option>
-                <option>Visit</option>
-            </select>
-            <div class="input-group-append">
-                <button type="submit" class="btn btn-grey"><i class="fas fa-search"></i></button>
+        </form>
+        <form method="post" action="">
+            <label for="company_brand"><b>Company</b></label>
+            <div class="form-group input-group">
+                <select class="form-control" id="company_brand" name="company_brand">
+                    <option>---</option>
+                    <?php foreach ($company as $com) : ?>
+                        <option><?= $com['brand']; ?></option>
+                    <?php endforeach; ?>
+                </select>
+                <div class="input-group-append">
+                    <button type="submit" class="btn btn-grey"><i class="fas fa-search"></i></button>
+                </div>
             </div>
-        </div>
-    </form>
-    <form method="post" action="">
-        <label for="agent_name"><b>Assignee</b></label>
-        <div class="form-group input-group">
-            <select class="form-control" id="agent_name" name="agent_name">
-                <option>---</option>
-                <?php foreach ($agent as $ag) : ?>
-                    <option><?= $ag['name']; ?></option>
-                <?php endforeach; ?>
-            </select>
-            <div class="input-group-append">
-                <button type="submit" class="btn btn-grey"><i class="fas fa-search"></i></button>
+        </form>
+        <form method="post" action="">
+            <label for="type"><b>Type</b></label>
+            <div class="form-group input-group">
+                <select class="form-control" id="type" name="type">
+                    <option>---</option>
+                    <option>On The Spot</option>
+                    <option>Remote</option>
+                    <option>Visit</option>
+                </select>
+                <div class="input-group-append">
+                    <button type="submit" class="btn btn-grey"><i class="fas fa-search"></i></button>
+                </div>
             </div>
-        </div>
-    </form>
-    <form method="post" action="">
-        <label for="status"><b>Status</b></label>
-        <div class="form-group input-group">
-            <select class="form-control" id="status" name="status">
-                <option>---</option>
-                <option>Open</option>
-                <option>In Progress</option>
-                <option>Pending</option>
-                <option>Resolved</option>
-            </select>
-            <div class="input-group-append">
-                <button type="submit" class="btn btn-grey"><i class="fas fa-search"></i></button>
+        </form>
+        <form method="post" action="">
+            <label for="agent_name"><b>Assignee</b></label>
+            <div class="form-group input-group">
+                <select class="form-control" id="agent_name" name="agent_name">
+                    <option>---</option>
+                    <?php foreach ($agent as $ag) : ?>
+                        <option><?= $ag['name']; ?></option>
+                    <?php endforeach; ?>
+                </select>
+                <div class="input-group-append">
+                    <button type="submit" class="btn btn-grey"><i class="fas fa-search"></i></button>
+                </div>
             </div>
-        </div>
-    </form>
+        </form>
+        <form method="post" action="">
+            <label for="status"><b>Status</b></label>
+            <div class="form-group input-group">
+                <select class="form-control" id="status" name="status">
+                    <option>---</option>
+                    <option>Open</option>
+                    <option>In Progress</option>
+                    <option>Pending</option>
+                    <option>Resolved</option>
+                </select>
+                <div class="input-group-append">
+                    <button type="submit" class="btn btn-grey"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+        </form>
+    </div>
 </div>
