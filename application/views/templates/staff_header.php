@@ -19,13 +19,13 @@
                     <a href="<?= base_url('staff/'); ?>" class="navbar-brand" id="text-brand">Helpdesk Ticketing System</a>
                     <div class="navbar-nav ml-auto navbar-right-top">
                         <?php $url = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH); ?>
-                        <?php if ($url === '/lastproject-ci/staff/') : ?>
+                        <?php if ($url === '/helpdesk-ci/staff/') : ?>
                             <div class="nav-item">
                                 <div class="top-search-bar">
                                     <a href="<?= base_url('staff/ticket_form/'); ?>" class="form-control button btn-primary">Create New Ticket</a>
                                 </div>
                             </div>
-                        <?php elseif ($url === '/lastproject-ci/staff/profile/') :?>
+                        <?php elseif ($url === '/helpdesk-ci/staff/profile/') :?>
                             <div class="nav-item">
                                 <div class="top-search-bar">
                                     <a href="<?= base_url('staff/'); ?>" class="form-control button btn-secondary">Back</a>
