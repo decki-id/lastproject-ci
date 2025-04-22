@@ -45,9 +45,9 @@ CREATE TABLE `agents` (
 --
 
 INSERT INTO `agents` (`id`, `name`, `address`, `city`, `phone`, `email`, `username`, `password`, `image`, `role_id`, `is_active`) VALUES
-(1, 'Decki Herdiawan Soepandi', 'Jl. Citra Asri Blok B No. 11 Padalarang', 'Bandung Barat', '+6282216668131', 'herdiawand@yahoo.co.id', 'deckiherdiawans', '$2y$10$OUWa3OvnqeSTcJykZRSUuOQAEJGS/Ju.vyeQEee5ulHrkcu4dPSPW', 'decki.png', 1, 1),
-(2, 'Tri Untung Sutriyanto', 'Jl. Dago Atas No. 55', 'Bandung', '+6281330003063', 'triuntungsutriyanto@yahoo.com', 'sutriyanto', '$2y$10$XgRAAHynZxJSugQ2RRDBOe1i8kutWRn30wpPggq4z.0s/.WAUX7d6', 'tri.jpg', 2, 1),
-(9, 'Edu Ramdhana Putra', 'Jl. Antapani Raya', 'Bandung', '+6281321600700', 'eduramdhanaputra@yahoo.com', 'ramdhana', '$2y$10$9TTHWeHceB2mEfnAwiOS3ewAxd9lZeoyvPnACHogw7NapI0QQvHyW', 'edu.jpg', 2, 1);
+(1, 'Decki Herdiawan Soepandi', 'Jl. Citra Asri Blok B No. 11 Padalarang', 'Bandung Barat', '+6282216668131', 'd.herdiawan.s@gmail.com', 'deckiherdiawans', '$2y$10$OUWa3OvnqeSTcJykZRSUuOQAEJGS/Ju.vyeQEee5ulHrkcu4dPSPW', 'decki.png', 1, 1),
+(2, 'Tri Untung Sutriyanto', 'Jl. Dago Atas No. 55', 'Bandung', '+6281330003063', 'try@gmail.com', 'sutriyanto', '$2y$10$XgRAAHynZxJSugQ2RRDBOe1i8kutWRn30wpPggq4z.0s/.WAUX7d6', 'tri.jpg', 2, 1),
+(3, 'Edu Ramdhana Putra', 'Jl. Antapani Raya', 'Bandung', '+6281321600700', 'eduramdhana@gmail.com', 'edu', '$2y$10$9TTHWeHceB2mEfnAwiOS3ewAxd9lZeoyvPnACHogw7NapI0QQvHyW', 'edu.jpg', 2, 1);
 
 -- --------------------------------------------------------
 
