@@ -1,8 +1,5 @@
 #panel {
-	position: fixed;
 	background: url('http://localhost/php/helpdesk-ci/images/windows_xp_bliss-wide.jpg');
-	width: 100%;
-	height: 100%;
 }
 
 #login-panel {
@@ -15,13 +12,20 @@
 	margin-top: -260px;
 	margin-left: -200px;
 	border-radius: 10px;
-	box-shadow: inset 3px 3px 4px grey,
-		inset -3px -3px 4px grey;
+	box-shadow: inset 3px 3px 4px grey, inset -3px -3px 4px grey;
 }
 
 #navbar-brand {
 	height: 60px;
 	width: 174px;
+}
+
+.w-40 {
+	width: 40% !important;
+}
+
+.pb-mod {
+	padding: 12px 0 0 0 !important;
 }
 
 .form-group.row {
@@ -33,10 +37,36 @@
 	#login-panel {
 		left: 345px;
 	}
+
+	.w-mod {
+		width: 75% !important;
+	}
+}
+
+@media only screen and (max-width:575px) {
+	#login-panel {
+		left: 345px;
+	}
+
+	.l-pt-mod {
+		padding: 0 15px 7px 15px !important;
+	}
+
+	.pb-mod {
+		padding: 0 0 !important;
+	}
+
+	.pt-mod {
+		padding: 0 0 12px 0 !important;
+	}
+
+	.col-mod {
+		margin-bottom: 0.75rem !important;
+	}
 }
 
 @media only screen and (max-width:480px) {
-	#login-panel {
-		left: 345px;
+	.col-mb-mod {
+		margin-bottom: 0.75rem !important;
 	}
 }
