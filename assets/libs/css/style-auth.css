@@ -2,6 +2,13 @@
 	background: url('http://localhost/php/helpdesk-ci/images/windows_xp_bliss-wide.jpg');
 }
 
+#scrollable-panel {
+	background: url('http://localhost/php/helpdesk-ci/images/windows_xp_bliss-wide.jpg') no-repeat center center fixed;
+	background-size: cover;
+	min-height: 100vh;
+	overflow-y: auto;
+}
+
 #login-panel {
 	position: relative;
 	background: white;
