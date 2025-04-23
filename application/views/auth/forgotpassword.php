@@ -9,14 +9,14 @@
 <div class="position-fixed w-100 h-100 d-flex justify-content-center align-items-center" id="panel">
 	<div class="card w-40 w-mod">
 		<div class="card-body text-center">
-			<img src="<?= base_url('images/'); ?>logo-ci.png" width="100" />
+			<img src="<?= base_url('images/'); ?>logo-ci.png" width="100">
 			<h4 class="card-title mt-2 mb-1">Forgot Password</h4>
 			<form method="post" action="<?= base_url('auth/forgotpassword/'); ?>">
 				<div class="form-group">
 					<label for="email">
 						<small>Enter your email address below and we will send you a link to reset your password.</small>
 					</label>
-					<input type="email" class="form-control" id="email" name="email" placeholder="Email address" required autofocus />
+					<input type="email" class="form-control" id="email" name="email" placeholder="Email address" required autofocus>
 				</div>
 				<div class="row">
 					<div class="col col-mod"><button type="submit" class="btn btn-primary btn-block">Reset My Password</button></div>
