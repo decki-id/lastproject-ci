@@ -1,5 +1,4 @@
-<!-- Footer -->
-  <body>
+    <!-- Footer -->
     <!-- Optional JavaScript -->
     <!-- jquery 3.3.1 -->
     <script src="<?= base_url('assets/'); ?>vendor/jquery/jquery-3.3.1.min.js"></script>

@@ -10,3 +10,4 @@
     <link rel="icon" type="image/png" href="<?= base_url('images/'); ?>favicon.ico" >
     <title>Helpdesk Ticketing System</title>
   </head>
+  <body>
