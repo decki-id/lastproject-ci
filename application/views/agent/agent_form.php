@@ -52,9 +52,15 @@
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="role_id" class="col-sm-2 col-form-label">Role ID</label>
+                    <label for="role_id" class="col-sm-2 col-form-label">Role</label>
                     <div class="col-sm-10 agent-field-custom">
-                        <input type="text" class="form-control" id="role_id" name="role_id" value="<?= set_value('role_id'); ?>">
+                        <select class="form-control" id="role_id" name="role_id">
+                            <option>--- Choose Role ---</option>
+                            <?php foreach($roles as $role) : ?>
+                                <option value="<?= $role['id'] ?>"><?= $role['role']; ?></option>
+                            <?php endforeach; ?>
+                        </select>
+                        <!-- <input type="text" class="form-control" id="role_id" name="role_id" value="<?= set_value('role_id'); ?>"> -->
                         <?= form_error('role_id', '<small class="text-danger pl-1">', '</small>'); ?>
                     </div>
                 </div>
