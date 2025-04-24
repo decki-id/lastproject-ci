@@ -441,7 +441,7 @@
             $this->email->subject('Decki ID Support Notification');
             $this->email->message('
                 Permintaan bantuan anda sudah selesai dikerjakan, silakan periksa kembali.<br>
-                Terima kasih telah menggunakan Revota.<br>
+                Terima kasih telah menggunakan Decki ID.<br>
                 <a href="'. base_url() .'">Buka portal</a>
             ');
             
@@ -557,7 +557,7 @@
             $this->email->to($this->input->post('email'));
             $this->email->subject('Decki ID Account Verification');
             $this->email->message('
-                Terima kasih telah menggunakan Revota.<br>
+                Terima kasih telah menggunakan Decki ID.<br>
                 Silakan klik tautan di bawah ini untuk mengaktifkan akun bantuan pelanggan anda dengan username dan password berikut.<br>
                 Username: ' . $this->input->post('username') . '<br>
                 Password: ' . $this->input->post('password') . '<br>
@@ -810,7 +810,7 @@
             $this->email->to($this->input->post('email'));
             $this->email->subject('Decki ID Account Verification');
             $this->email->message('
-                Selamat datang di Revota.<br>
+                Selamat datang di Decki ID.<br>
                 Silakan klik tautan di bawah ini untuk mengaktifkan akun anda dengan username dan password berikut dan mulai bekerja.<br>
                 Username: ' . $this->input->post('username') . '<br>
                 Password: ' . $this->input->post('password') . '<br>
@@ -910,93 +910,114 @@
             $this->db->update('agents');
         }
 
+        public function getAllRoles() {
+            $this->db->order_by('id', 'ASC');
+            return $this->db->get('user_role')->result_array();  
+        }
+
         public function deleteAgent($id) {
             $this->db->delete('agents', ['id' => $id]);
         }
 
         public function reportMostCases() {
-            $querySubject = "SELECT b.subject AS 'subject', COUNT(b.subject) AS 'amount'
-                             FROM `tickets` a INNER JOIN `subjects` b
-                             ON a.subject = b.subject GROUP BY b.subject
-                             ORDER BY amount DESC";
+            $querySubject = "
+                SELECT b.subject AS 'subject', COUNT(b.subject) AS 'amount'
+                FROM `tickets` a INNER JOIN `subjects` b
+                ON a.subject = b.subject GROUP BY b.subject
+                ORDER BY amount DESC
+            ";
             return $this->db->query($querySubject)->result_array();
         }
 
         public function reportMostCasesTable() {
-            $querySubject = "SELECT b.subject AS 'subject', COUNT(b.subject) AS 'amount'
-                             FROM `tickets` a INNER JOIN `subjects` b
-                             ON a.subject = b.subject GROUP BY b.subject
-                             ORDER BY amount DESC";
+            $querySubject = "
+                SELECT b.subject AS 'subject', COUNT(b.subject) AS 'amount'
+                FROM `tickets` a INNER JOIN `subjects` b
+                ON a.subject = b.subject GROUP BY b.subject
+                ORDER BY amount DESC
+            ";
             return $this->db->query($querySubject)->result_array();
         }
 
         public function mostCasesByPeriod() {
             $from = $this->input->post('from');
             $until = $this->input->post('until');
-            $querySubject = "SELECT b.subject AS 'subject', COUNT(b.subject) AS 'amount'
-                             FROM `tickets` a INNER JOIN `subjects` b
-                             ON a.subject = b.subject
-                             WHERE DATE(date_created) BETWEEN '$from' AND '$until'
-                             GROUP BY b.subject ORDER BY amount DESC";
+            $querySubject = "
+                SELECT b.subject AS 'subject', COUNT(b.subject) AS 'amount'
+                FROM `tickets` a INNER JOIN `subjects` b
+                ON a.subject = b.subject
+                WHERE DATE(date_created) BETWEEN '$from' AND '$until'
+                GROUP BY b.subject ORDER BY amount DESC
+            ";
             return $this->db->query($querySubject)->result_array();
         }
 
         public function mostCasesByPeriodTable() {
             $from = $this->input->post('from');
             $until = $this->input->post('until');
-            $querySubject = "SELECT b.subject AS 'subject', COUNT(b.subject) AS 'amount'
-                             FROM `tickets` a INNER JOIN `subjects` b
-                             ON a.subject = b.subject
-                             WHERE DATE(date_created) BETWEEN '$from' AND '$until'
-                             GROUP BY b.subject ORDER BY amount DESC";
+            $querySubject = "
+                SELECT b.subject AS 'subject', COUNT(b.subject) AS 'amount'
+                FROM `tickets` a INNER JOIN `subjects` b
+                ON a.subject = b.subject
+                WHERE DATE(date_created) BETWEEN '$from' AND '$until'
+                GROUP BY b.subject ORDER BY amount DESC
+            ";
             return $this->db->query($querySubject)->result_array();
         }
 
         public function printReport1Period() {
             $from = $this->input->get('from');
             $until = $this->input->get('until');
-            $querySubject = "SELECT b.subject AS 'subject', COUNT(b.subject) AS 'amount'
-                             FROM `tickets` a INNER JOIN `subjects` b
-                             ON a.subject = b.subject
-                             WHERE DATE(date_created) BETWEEN '$from' AND '$until'
-                             GROUP BY b.subject ORDER BY amount DESC";
+            $querySubject = "
+                SELECT b.subject AS 'subject', COUNT(b.subject) AS 'amount'
+                FROM `tickets` a INNER JOIN `subjects` b
+                ON a.subject = b.subject
+                WHERE DATE(date_created) BETWEEN '$from' AND '$until'
+                GROUP BY b.subject ORDER BY amount DESC
+            ";
             return $this->db->query($querySubject)->result_array();
         }
 
         public function printReport1PeriodTable() {
             $from = $this->input->get('from');
             $until = $this->input->get('until');
-            $querySubject = "SELECT b.subject AS 'subject', COUNT(b.subject) AS 'amount'
-                             FROM `tickets` a INNER JOIN `subjects` b
-                             ON a.subject = b.subject
-                             WHERE DATE(date_created) BETWEEN '$from' AND '$until'
-                             GROUP BY b.subject ORDER BY amount DESC";
+            $querySubject = "
+                SELECT b.subject AS 'subject', COUNT(b.subject) AS 'amount'
+                FROM `tickets` a INNER JOIN `subjects` b
+                ON a.subject = b.subject
+                WHERE DATE(date_created) BETWEEN '$from' AND '$until'
+                GROUP BY b.subject ORDER BY amount DESC
+            ";
             return $this->db->query($querySubject)->result_array();
         }
 
         public function reportAPBA() {
-            $queryAgent = "SELECT a.name AS 'agent',
-                            SUM(CASE WHEN DATEDIFF(CURDATE(), b.date_created) 
-                                BETWEEN  0 AND 7 THEN 1 ELSE 0 END) AS 'w1',
-                            SUM(CASE WHEN DATEDIFF(CURDATE(), b.date_created) 
-                                BETWEEN 8 AND 14 THEN 1 ELSE 0 END) AS 'w2',
-                            SUM(CASE WHEN DATEDIFF(CURDATE(), b.date_created) 
-                                BETWEEN 15 AND 21 THEN 1 ELSE 0 END) AS 'w3'
-                           FROM agents a INNER JOIN tickets b ON a.name = b.agent_name
-                           WHERE b.status = 'Resolved' GROUP BY b.agent_name;";
+            $queryAgent = "
+                SELECT a.name AS 'agent',
+                SUM(CASE WHEN DATEDIFF(CURDATE(), b.date_created) 
+                    BETWEEN 0 AND 7 THEN 1 ELSE 0 END) AS 'w1',
+                SUM(CASE WHEN DATEDIFF(CURDATE(), b.date_created) 
+                    BETWEEN 8 AND 14 THEN 1 ELSE 0 END) AS 'w2',
+                SUM(CASE WHEN DATEDIFF(CURDATE(), b.date_created) 
+                    BETWEEN 15 AND 21 THEN 1 ELSE 0 END) AS 'w3'
+                FROM agents a INNER JOIN tickets b ON a.name = b.agent_name
+                WHERE b.status = 'Resolved' GROUP BY b.agent_name
+            ";
             return $this->db->query($queryAgent)->result_array();
         }
 
         public function reportAPBATable() {
-            $queryAgent = "SELECT a.name AS 'agent',
-                            SUM(CASE WHEN DATEDIFF(CURDATE(), b.date_created) 
-                                BETWEEN  0 AND 7 THEN 1 ELSE 0 END) AS 'w1',
-                            SUM(CASE WHEN DATEDIFF(CURDATE(), b.date_created) 
-                                BETWEEN 8 AND 14 THEN 1 ELSE 0 END) AS 'w2',
-                            SUM(CASE WHEN DATEDIFF(CURDATE(), b.date_created) 
-                                BETWEEN 15 AND 21 THEN 1 ELSE 0 END) AS 'w3'
-                           FROM agents a INNER JOIN tickets b ON a.name = b.agent_name
-                           WHERE b.status = 'Resolved' GROUP BY b.agent_name;";
+            $queryAgent = "
+                SELECT a.name AS 'agent',
+                SUM(CASE WHEN DATEDIFF(CURDATE(), b.date_created) 
+                    BETWEEN 0 AND 7 THEN 1 ELSE 0 END) AS 'w1',
+                SUM(CASE WHEN DATEDIFF(CURDATE(), b.date_created) 
+                    BETWEEN 8 AND 14 THEN 1 ELSE 0 END) AS 'w2',
+                SUM(CASE WHEN DATEDIFF(CURDATE(), b.date_created) 
+                    BETWEEN 15 AND 21 THEN 1 ELSE 0 END) AS 'w3'
+                FROM agents a INNER JOIN tickets b ON a.name = b.agent_name
+                WHERE b.status = 'Resolved' GROUP BY b.agent_name
+            ";
             return $this->db->query($queryAgent)->result_array();
         }
     }
