@@ -52,6 +52,18 @@
 	.w-cp-mod {
 		width: 50% !important;
 	}
+
+	.px-md-first-mod {
+		padding: 6px 0 0 0 !important;
+	}
+
+	.px-md-mod {
+		padding: 0 0 0 0 !important;
+	}
+
+	.l-pt-md-mod {
+		padding: 0 15px 7px 15px !important;
+	}
 }
 
 @media only screen and (max-width:575px) {
