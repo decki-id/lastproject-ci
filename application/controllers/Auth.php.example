@@ -26,7 +26,9 @@
                 $this->load->view('templates/auth_header');
                 $this->load->view('auth/login');
                 $this->load->view('templates/auth_footer');
-            } else { $this->login(); }
+            } else {
+                $this->login();
+            }
         }
 
         public function login() {
@@ -95,6 +97,30 @@
                     $this->session->set_flashdata('flash', 'This email is not registered!');
                     redirect('auth/');
                 }
+            }
+        }
+
+        public function signup() {
+            $data['roles'] = $this->Agent_model->getAllRoles();
+
+            $this->form_validation->set_rules('name', 'name', 'required|trim');
+            $this->form_validation->set_rules('address', 'address', 'required|trim');
+            $this->form_validation->set_rules('city', 'city', 'required|trim');
+            $this->form_validation->set_rules('phone', 'phone', 'required|trim');
+            $this->form_validation->set_rules('email', 'email', 'required|trim|valid_email');
+            $this->form_validation->set_rules('username', 'username', 'required|trim|alpha_numeric|regex_match[/^[^\s]*$/]');
+            $this->form_validation->set_rules('password', 'password', 'required|trim|min_length[5]');
+            $this->form_validation->set_rules('image', 'image', 'required|trim');
+            $this->form_validation->set_rules('role_id', 'role_id', 'required|trim');
+
+            if ($this->form_validation->run() == false) {
+                $this->load->view('templates/auth_header');
+                $this->load->view('auth/signup', $data);
+                $this->load->view('templates/auth_footer');
+            } else {
+                $this->Agent_model->addNewAgent();
+                $this->session->set_flashdata('flash-success', 'Please check your email to activate your account!');
+                redirect('auth/');
             }
         }
 
