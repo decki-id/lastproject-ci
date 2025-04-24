@@ -62,7 +62,7 @@
 						</div>
 						<div class="row">
 							<div class="col col-mb-mod"><button type="submit" class="btn btn-primary btn-block">Log In</button></div>
-							<div class="col"><a href="<?= base_url(); ?>" class="col btn btn-success">Sign Up</a></div>
+							<div class="col"><a href="<?= base_url('auth/signup/'); ?>" class="col btn btn-success">Sign Up</a></div>
 						</div>
 					</form>
 				</div>
