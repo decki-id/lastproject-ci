@@ -432,6 +432,7 @@
                 redirect('auth/blocked/');
             }
             $data['title'] = 'Lists';
+            $data['roles'] = $this->Agent_model->getAllRoles();
             $this->form_validation->set_rules('name', 'name', 'required|trim');
             $this->form_validation->set_rules('address', 'address', 'required|trim');
             $this->form_validation->set_rules('city', 'city', 'required|trim');
@@ -445,7 +446,7 @@
                 $this->load->view('templates/agent_header');
                 $this->load->view('templates/agent_sidebar', $data);
                 $this->load->view('templates/agent_topbar', $data);
-                $this->load->view('agent/agent_form');
+                $this->load->view('agent/agent_form', $data);
                 $this->load->view('templates/agent_footer');
             } else {
                 $this->Agent_model->addNewAgent();
